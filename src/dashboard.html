@@ -12,7 +12,7 @@
       crossorigin="anonymous"
       type="application/javascript"
       src="https://cdn.jsdelivr.net/npm/@qlik/embed-web-components@1/dist/index.min.js"
-      data-host="https://qmi-qs-7859/jwt"
+      data-host="https://{QSUrl}/jwt"
       data-cross-site-cookies="true"
       data-auth-type="windowscookie">
     </script>
@@ -22,26 +22,103 @@
   <body class="d-flex flex-column h-100">
     <main class="flex-shrink-0" >
       <div class="container" >
-        <h1 class="pb-2"> My Qlik Embed Element</h1>
-
+        <h1 class="pb-2"> My Qlik Embed Elements</h1>
         <div class="container px-4 py-5" id="icon-grid">
+          <!-- SELECTION BAR -->
           <div class="row ">
-            <div class="col-sm-8"> 
-              <div class="qlik-embed-home-main" id="qlik-embed-container1" data-qlik-embed-app-id="b69c3242-5e07-4f9c-8839-4657041dcc42">
+            <div class="col-sm-12"> 
+              <h2 class="pb-2"></h2>Selection bar</h2>
+              <div class="qlik-embed-home-main" id="qlik-embed-container1">
+                <qlik-embed
+                  ui='analytics/selections'
+                  app-id='{AppId}'
+                  id="qe4"
+                  >
+                </qlik-embed>
+              </div>
+            </div>
+          </div>
+
+          <!-- FIELDS -->
+          <div class="row ">
+            <h2 class="pb-2"></h2>Field</h2>
+            <div class="col-sm-4"> 
+            <div class="qlik-embed-home-main" id="qlik-embed-container1">            
+                <qlik-embed
+                  ui='analytics/field'
+                  app-id='{AppId}'
+                  field-id="Work Shift"
+                  id="qe5"
+                  >
+                </qlik-embed>
+              </div>
+            </div>
+            <div class="col-sm-4"> 
+              <div class="qlik-embed-home-main" id="qlik-embed-container1">
+                <qlik-embed
+                  ui='analytics/field'
+                  app-id='{AppId}'
+                  library-id="1cd1e4ee-1cf9-48e1-a75f-b894480600a7"
+                  type="dimension"
+                  id="qe6"
+                  >
+                </qlik-embed>
+              </div>
+            </div>
+          </div>
+
+          <!-- CHART -->
+          <div class="row ">
+            <div class="col-sm-12"> 
+              <h2 class="pb-2"></h2>chart</h2>
+             <div class="qlik-embed-home-main" id="qlik-embed-container1">            
                 <qlik-embed
                   ui="analytics/chart"
                   object-id="asRPu"
-                  app-id="b69c3242-5e07-4f9c-8839-4657041dcc42" 
+                  app-id="{AppId}" 
                   id="qe1"
                   >
                 </qlik-embed>
               </div>
             </div>
-            
           </div>
 
-        </div>
+          <!-- SHEET -->
+          <div class="row ">
+            <div class="col-sm-12"> 
+              <h2 class="pb-2"></h2>sheet</h2>
+              <div class="qlik-embed-home-main" id="qlik-embed-container1">             
+                <qlik-embed
+                  ui="analytics/sheet"
+                  object-id="7ec9cfc9-2869-4105-9365-4ce0a66eb146""
+                  app-id="{AppId}" 
+                  id="qe2"
+                  >
+                </qlik-embed>
+              </div>
+            </div>
+          </div>
 
+          <!-- ON-THE-FLY -->
+          <div class="row ">
+            <div class="col-sm-12"> 
+              <h2 class="pb-2"></h2>on-the-fly</h2>
+              <div class="qlik-embed-home-main" id="qlik-embed-container1">            
+                <qlik-embed
+                  ui='analytics/chart'
+                  app-id='{AppId}'
+                  type='barchart'
+                  dimensions='["[Machine Name]"]'
+                  measures='["[N. Parts Produced]"]'
+                  id="qe3"
+                  >
+                </qlik-embed>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
       </div>
     </main>
   </body>

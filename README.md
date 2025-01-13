@@ -30,20 +30,18 @@ Simple example with :
       crossorigin="anonymous"
       type="application/javascript"
       src="https://cdn.jsdelivr.net/npm/@qlik/embed-web-components@1/dist/index.min.js"
-      data-host="https://yourQSsite/jwt"
+      data-host="https://QSUrl/jwt"
       data-cross-site-cookies="true"
       data-auth-type="windowscookie">
 </script>
 ```
 
 ```
-<div class="qlik-embed-home-main" id="qlik-embed-container1" data-qlik-embed-app-id="b69c3242-5e07-4f9c-8839-4657041dcc42">
-    <qlik-embed
-        ui="analytics/chart"
-        object-id="asRPu"
-        app-id="b69c3242-5e07-4f9c-8839-4657041dcc42" 
-        id="qe1"
-    >
-    </qlik-embed>
-</div>
+<qlik-embed
+    ui="analytics/chart"
+    object-id="asRPu"
+    app-id="{AppId}" 
+    id="qe1"
+>
+</qlik-embed>
 ```
