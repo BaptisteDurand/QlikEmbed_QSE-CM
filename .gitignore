@@ -3,3 +3,4 @@ server_certs/
 package-lock.json
 .env
 src/ObjectTests.html
+src/genericDashboard.html
